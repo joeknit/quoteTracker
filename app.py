@@ -6,6 +6,11 @@ from quote_utilities import read_quote, edit_quote, number_of_quotes, add_quote,
 app: Flask = Flask(__name__)
 
 
+@app.get('/test')
+def test():
+    return "The service is running properly and you can access it"
+
+
 @app.get('/quote')
 def get_quote():
     quote = read_quote(int(random()*number_of_quotes())+1)
