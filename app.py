@@ -43,4 +43,4 @@ def delete_quote(quote_number: int):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port="8080")
