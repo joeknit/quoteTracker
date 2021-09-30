@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class QuoteController {
 
-    public Handler readQuote = context -> {
+    public Handler readRandomQuote = context -> {
         try {
             int numOfLines = QuoteUtilities.numOfQuotes();
             String quote = QuoteUtilities.getQuote((int) (Math.random() * numOfLines) + 1);
@@ -18,6 +18,19 @@ public class QuoteController {
             context.result(e.toString());
             context.status(200);
         }
+    };
+
+    public Handler readSpecificQuote = context -> {
+        int lineNumber = Integer.parseInt(context.pathParam("quoteNumber"));
+        try{
+            String quote = QuoteUtilities.getQuote(lineNumber);
+            context.result(quote);
+            context.status(200);
+        } catch(FileNotFoundException e){
+            context.result(e.toString());
+            context.status(401);
+        }
+
     };
 
     public Handler createQuote = context -> {
