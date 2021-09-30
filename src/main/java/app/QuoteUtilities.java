@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class QuoteUtilities {
 
-    static File quotesFile = new File("~\\quotes.txt");
+    static File quotesFile = new File("/home/ec2-user/quotes.txt");
 
     public static String getQuote(int lineNumber) throws FileNotFoundException {
         int count = 0;
