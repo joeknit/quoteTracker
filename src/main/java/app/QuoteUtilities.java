@@ -44,11 +44,17 @@ public class QuoteUtilities {
         FileWriter fileWriter = new FileWriter(quotesFile);
         int count = 0;
         for(String line : stringList){
-            if(count == lineNumber-1 && line!= ""){
+            if(lineNumber == 1  && count == 0){
                 fileWriter.append(quote);
             }
-            else{
+            else if(lineNumber != 1 && count ==0){
                 fileWriter.append(line);
+            }    
+            else if(count == lineNumber-1){
+                fileWriter.append("\n"+quote);
+            }
+            else{
+                fileWriter.append(line)   
             }
             count+=1;
         }
