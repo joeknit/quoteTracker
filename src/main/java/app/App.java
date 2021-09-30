@@ -21,7 +21,7 @@ public class App {
         //endpoints
         app.get("/quote", quoteController.readRandomQuote);
         app.post("/quote", quoteController.createQuote);
-        app.post("/quote/:quoteNumber", quoteController.updateQuote);
+        app.patch("/quote/:quoteNumber", quoteController.updateQuote);
         app.delete("/quote/:quoteNumber", quoteController.deleteQuote);
         app.get("/quote/:quoteNumber", quoteController.readSpecificQuote);
     }
