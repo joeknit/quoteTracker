@@ -19,10 +19,11 @@ public class App {
         app.get("/testing", context -> {context.result("Testing");});
 
         //endpoints
-        app.get("/quote", quoteController.readQuote);
+        app.get("/quote", quoteController.readRandomQuote);
         app.post("/quote", quoteController.createQuote);
         app.post("/quote/:quoteNumber", quoteController.updateQuote);
         app.delete("/quote/:quoteNumber", quoteController.deleteQuote);
+        app.get("/quote/:quoteNumber", quoteController.readSpecificQuote);
     }
 
 }
