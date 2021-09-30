@@ -1,4 +1,4 @@
-package quoteController;
+package app;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class QuoteUtilities {
 
-    static File quotesFile = new File("src/main/java/quoteController/quotes.txt");
+    static File quotesFile = new File("~\\quotes.txt");
 
     public static String getQuote(int lineNumber) throws FileNotFoundException {
         int count = 0;
@@ -20,7 +20,7 @@ public class QuoteUtilities {
     }
 
     public static void addQuote(String quote) throws IOException {
-        FileWriter fileWriter = new FileWriter("src/main/java/quoteController/quotes.txt", true);
+        FileWriter fileWriter = new FileWriter(quotesFile, true);
         fileWriter.write("\n\""+quote+"\"");
         fileWriter.close();
         return;

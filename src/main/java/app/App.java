@@ -1,4 +1,4 @@
-package quoteController;
+package app;
 
 import io.javalin.Javalin;
 

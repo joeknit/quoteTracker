@@ -1,7 +1,6 @@
-package quoteController;
+package app;
 
 import io.javalin.http.Handler;
-import io.javalin.plugin.openapi.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
