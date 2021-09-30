@@ -54,7 +54,7 @@ public class QuoteUtilities {
                 fileWriter.append("\n"+quote);
             }
             else{
-                fileWriter.append(line)   
+                fileWriter.append("\n"+line)   
             }
             count+=1;
         }
